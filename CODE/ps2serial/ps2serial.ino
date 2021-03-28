@@ -46,7 +46,7 @@
 #include <PS2Mouse.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(12, 11); // RX, TX
+SoftwareSerial mySerial(2, 1); // RX, TX
 
 
 /* Pin settings, feel free to change to what you find most convenient to use.
@@ -55,10 +55,10 @@ SoftwareSerial mySerial(12, 11); // RX, TX
  * connect it through a 74LS00 to invert the logic levels so the PC serial can
  * understand it. No MAX-232 required as 5v is enough to drive most serial interfaces.
  */
-#define PS2_MOUSE_CLOCK   2   /* Must connect to Pin 5 (clock) of PS/2 mouse */
+#define PS2_MOUSE_CLOCK   3   /* Must connect to Pin 5 (clock) of PS/2 mouse */
 #define PS2_MOUSE_DATA    4   /* Must connect to Pin 1 (data) of PS/2 mouse */
 
-#define RTS_PROBE         7   /* Must connect to Pin 7 (RTS) of PC serial port */
+#define RTS_PROBE         0   /* Must connect to Pin 7 (RTS) of PC serial port */
                               /* (NOTE: must go through a 5v regulator and */
                               /* 200ohm resistor first or you'll blow the pin) */
 
@@ -133,10 +133,6 @@ void setup()
 {
   /* Set pin for RTS probe as input */
   pinMode( RTS_PROBE, INPUT );
-
-  /* For blinking L13 LED */
-  pinMode( 13, OUTPUT );
-  digitalWrite( 13, LOW );
   
   #ifdef DEBUG
   /* Init serial for debug messages */
@@ -165,16 +161,6 @@ void setup()
   #ifdef DEBUG
   Serial.print("Program start!\n");
   #endif
-
-  /* Flash LED to indicate adapter is ready */
-  delay( 500 );
-  for ( int i=0; i<4; i++ )
-  {
-    digitalWrite( 13, HIGH );
-    delay( 200 );
-    digitalWrite( 13, LOW );
-    delay( 200 );
-  }
 }
 
 

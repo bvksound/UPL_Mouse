@@ -1,0 +1,238 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:DB9_Female J2
+U 1 1 605F6215
+P 10400 2550
+F 0 "J2" H 10580 2596 50  0000 L CNN
+F 1 "DB9_Female" H 10580 2505 50  0000 L CNN
+F 2 "Connector_Dsub:DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset7.48mm" H 10400 2550 50  0001 C CNN
+F 3 " ~" H 10400 2550 50  0001 C CNN
+	1    10400 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L BVKSound:5749180-1 J1
+U 1 1 605F82B3
+P 2050 1350
+F 0 "J1" H 2292 1637 60  0000 C CNN
+F 1 "5749180-1" H 2292 1531 60  0000 C CNN
+F 2 "BVKSound:5749180-1" H 2450 1090 60  0001 C CNN
+F 3 "" H 2050 1350 60  0000 C CNN
+	1    2050 1350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L BVKSound:MAX232DR U1
+U 1 1 605FC6B2
+P 7000 4000
+F 0 "U1" H 8300 4387 60  0000 C CNN
+F 1 "MAX232DR" H 8300 4281 60  0000 C CNN
+F 2 "BVKSound:MAX232DR" H 8300 4240 60  0001 C CNN
+F 3 "" H 7000 4000 60  0000 C CNN
+	1    7000 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L BVKSound:10118193-0001LF J3
+U 1 1 6060772D
+P 2050 2650
+F 0 "J3" H 2292 2937 60  0000 C CNN
+F 1 "10118193-0001LF" H 2292 2831 60  0000 C CNN
+F 2 "BVKSound:10118193-0001LF" H 2450 2390 60  0001 C CNN
+F 3 "" H 2050 2650 60  0000 C CNN
+	1    2050 2650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L BVKSound:ATTINY85-20SH U2
+U 1 1 6060919A
+P 3500 2050
+F 0 "U2" H 4600 2437 60  0000 C CNN
+F 1 "ATTINY85-20SH" H 4600 2331 60  0000 C CNN
+F 2 "BVKSound:ATTINY85-20SH" H 4600 2290 60  0001 C CNN
+F 3 "" H 3500 2050 60  0000 C CNN
+	1    3500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L BVKSound:EEE-FC1V1R0R C1
+U 1 1 6060D056
+P 6000 4000
+F 0 "C1" V 6204 4130 50  0000 L CNN
+F 1 "EEE-FC1V1R0R" V 6295 4130 50  0000 L CNN
+F 2 "CAPAE430X550N" H 6350 4050 50  0001 L CNN
+F 3 "https://mouser.componentsearchengine.com/Datasheets/5/EEE-FC1V1R0R.pdf" H 6350 3950 50  0001 L CNN
+F 4 "Aluminum Electrolytic Capacitors - SMD 1uF 35V" H 6350 3850 50  0001 L CNN "Description"
+F 5 "5.5" H 6350 3750 50  0001 L CNN "Height"
+F 6 "Panasonic" H 6350 3650 50  0001 L CNN "Manufacturer_Name"
+F 7 "EEE-FC1V1R0R" H 6350 3550 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EEE-FC1V1R0R" H 6350 3450 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FC1V1R0R/?qs=qE6bgDGEOCv6cHKT%2FPWEYQ%3D%3D" H 6350 3350 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EEE-FC1V1R0R" H 6350 3250 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/eee-fc1v1r0r/panasonic" H 6350 3150 50  0001 L CNN "Arrow Price/Stock"
+	1    6000 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L BVKSound:EEE-FC1V1R0R C2
+U 1 1 6060DDEB
+P 6000 4700
+F 0 "C2" V 6204 4830 50  0000 L CNN
+F 1 "EEE-FC1V1R0R" V 6295 4830 50  0000 L CNN
+F 2 "CAPAE430X550N" H 6350 4750 50  0001 L CNN
+F 3 "https://mouser.componentsearchengine.com/Datasheets/5/EEE-FC1V1R0R.pdf" H 6350 4650 50  0001 L CNN
+F 4 "Aluminum Electrolytic Capacitors - SMD 1uF 35V" H 6350 4550 50  0001 L CNN "Description"
+F 5 "5.5" H 6350 4450 50  0001 L CNN "Height"
+F 6 "Panasonic" H 6350 4350 50  0001 L CNN "Manufacturer_Name"
+F 7 "EEE-FC1V1R0R" H 6350 4250 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EEE-FC1V1R0R" H 6350 4150 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FC1V1R0R/?qs=qE6bgDGEOCv6cHKT%2FPWEYQ%3D%3D" H 6350 4050 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EEE-FC1V1R0R" H 6350 3950 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/eee-fc1v1r0r/panasonic" H 6350 3850 50  0001 L CNN "Arrow Price/Stock"
+	1    6000 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L BVKSound:EEE-FC1V1R0R C3
+U 1 1 6060E74F
+P 5200 4700
+F 0 "C3" V 5404 4830 50  0000 L CNN
+F 1 "EEE-FC1V1R0R" V 5495 4830 50  0000 L CNN
+F 2 "CAPAE430X550N" H 5550 4750 50  0001 L CNN
+F 3 "https://mouser.componentsearchengine.com/Datasheets/5/EEE-FC1V1R0R.pdf" H 5550 4650 50  0001 L CNN
+F 4 "Aluminum Electrolytic Capacitors - SMD 1uF 35V" H 5550 4550 50  0001 L CNN "Description"
+F 5 "5.5" H 5550 4450 50  0001 L CNN "Height"
+F 6 "Panasonic" H 5550 4350 50  0001 L CNN "Manufacturer_Name"
+F 7 "EEE-FC1V1R0R" H 5550 4250 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EEE-FC1V1R0R" H 5550 4150 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FC1V1R0R/?qs=qE6bgDGEOCv6cHKT%2FPWEYQ%3D%3D" H 5550 4050 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EEE-FC1V1R0R" H 5550 3950 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/eee-fc1v1r0r/panasonic" H 5550 3850 50  0001 L CNN "Arrow Price/Stock"
+	1    5200 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L BVKSound:EEE-FC1V1R0R C4
+U 1 1 6060F3C9
+P 5650 5200
+F 0 "C4" V 5946 5070 50  0000 R CNN
+F 1 "EEE-FC1V1R0R" V 5855 5070 50  0000 R CNN
+F 2 "CAPAE430X550N" H 6000 5250 50  0001 L CNN
+F 3 "https://mouser.componentsearchengine.com/Datasheets/5/EEE-FC1V1R0R.pdf" H 6000 5150 50  0001 L CNN
+F 4 "Aluminum Electrolytic Capacitors - SMD 1uF 35V" H 6000 5050 50  0001 L CNN "Description"
+F 5 "5.5" H 6000 4950 50  0001 L CNN "Height"
+F 6 "Panasonic" H 6000 4850 50  0001 L CNN "Manufacturer_Name"
+F 7 "EEE-FC1V1R0R" H 6000 4750 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EEE-FC1V1R0R" H 6000 4650 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EEE-FC1V1R0R/?qs=qE6bgDGEOCv6cHKT%2FPWEYQ%3D%3D" H 6000 4550 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EEE-FC1V1R0R" H 6000 4450 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/eee-fc1v1r0r/panasonic" H 6000 4350 50  0001 L CNN "Arrow Price/Stock"
+	1    5650 5200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:AVR-ISP-6 J4
+U 1 1 6060FCC4
+P 2150 4150
+F 0 "J4" H 1821 4246 50  0000 R CNN
+F 1 "AVR-ISP-6" H 1821 4155 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" V 1900 4200 50  0001 C CNN
+F 3 " ~" H 875 3600 50  0001 C CNN
+	1    2150 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4000 7000 4000
+Wire Wire Line
+	7000 4200 6350 4200
+Wire Wire Line
+	6350 4200 6350 4500
+Wire Wire Line
+	6350 4500 6000 4500
+Wire Wire Line
+	6000 4700 6450 4700
+Wire Wire Line
+	6450 4700 6450 4300
+Wire Wire Line
+	6450 4300 7000 4300
+Wire Wire Line
+	7000 4400 6550 4400
+Wire Wire Line
+	6550 4400 6550 5200
+Wire Wire Line
+	6550 5200 6000 5200
+Wire Wire Line
+	5200 4700 5200 4100
+Wire Wire Line
+	5200 4100 7000 4100
+Wire Wire Line
+	5650 4700 5650 4600
+Wire Wire Line
+	5650 4600 6650 4600
+Wire Wire Line
+	6650 4600 6650 4500
+Wire Wire Line
+	6650 4500 7000 4500
+$Comp
+L power:GND #PWR?
+U 1 1 606221A8
+P 5200 5450
+F 0 "#PWR?" H 5200 5200 50  0001 C CNN
+F 1 "GND" H 5205 5277 50  0000 C CNN
+F 2 "" H 5200 5450 50  0001 C CNN
+F 3 "" H 5200 5450 50  0001 C CNN
+	1    5200 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 5450 5200 5300
+Wire Wire Line
+	5650 5200 5650 5300
+Wire Wire Line
+	5650 5300 5200 5300
+Connection ~ 5200 5300
+Wire Wire Line
+	5200 5300 5200 5200
+$Comp
+L power:GND #PWR?
+U 1 1 60622EDC
+P 10050 4100
+F 0 "#PWR?" H 10050 3850 50  0001 C CNN
+F 1 "GND" H 10055 3927 50  0000 C CNN
+F 2 "" H 10050 4100 50  0001 C CNN
+F 3 "" H 10050 4100 50  0001 C CNN
+	1    10050 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 4100 10050 4100
+$Comp
+L power:VCC #PWR?
+U 1 1 60623AFF
+P 9850 3800
+F 0 "#PWR?" H 9850 3650 50  0001 C CNN
+F 1 "VCC" H 9865 3973 50  0000 C CNN
+F 2 "" H 9850 3800 50  0001 C CNN
+F 3 "" H 9850 3800 50  0001 C CNN
+	1    9850 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 4000 9850 4000
+Wire Wire Line
+	9850 4000 9850 3800
+$EndSCHEMATC
