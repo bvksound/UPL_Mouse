@@ -1,28 +1,26 @@
-//Use ATTiny85 with 8Mhz Configuration.
+//Use ATTiny with clock Configuration.
 //Burn the bootloader so the configuration is stored within the controller
 //Burn using programmer AVR ICE
 
 #include <PS2Mouse.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(2, 1); // RX, TX
 
+SoftwareSerial mySerial(0, 1); // RX, TX
+SoftwareSerial debugSerial(3, 4); // RX, TX
 
+#define PS2_MOUSE_CLOCK   8   /* Must connect to Pin 5 (clock) of PS/2 mouse */
+#define PS2_MOUSE_DATA    7   /* Must connect to Pin 1 (data) of PS/2 mouse */
 
-#define PS2_MOUSE_CLOCK   3   /* Must connect to Pin 5 (clock) of PS/2 mouse */
-#define PS2_MOUSE_DATA    4   /* Must connect to Pin 1 (data) of PS/2 mouse */
-
-#define RTS_PROBE         0   
+#define RTS_PROBE         2    
 
 #define USE_MS_PROTOCOL
-#define USE_SERIAL1
 
 /* Uncomment to enable debug messages over USB serial (serial monitor must be active).
  * Debug messages are sent using the Serial class. Don't uncomment for Arduinos with a
  * single hardware UART.
  */
-//#define DEBUG
-
+#define DEBUG
 
 /* Status variables for keeping track of button/probe states */
 bool left_status = false;
@@ -78,30 +76,27 @@ void setup()
   
   #ifdef DEBUG
   /* Init serial for debug messages */
-  Serial.begin(115200);
-  
-  while( !Serial )
+  debugSerial.begin(115200);
+  while( !debugSerial )
   {
     /* Wait for USB serial to be ready (monitor active) */
   }
-  
-  Serial.print( "Init mouse\n" );
+  debugSerial.print( "Init mouse\n" );
   #endif
   
   /* Initialize PS/2 mouse */
   mouse.initialize();
+  debugSerial.print( "Initialize mouse\n" );
   mouse.set_sample_rate( 200 );
+  debugSerial.print( "Sample_rate mouse\n" );
   mouse.set_scaling_1_1();
+  debugSerial.print( "Scaling mouse\n" );
   
   /* Initialize serial for mouse data */
-  #ifdef USE_SERIAL1
   mySerial.begin(1200);
-  #else
-  Serial.begin( 1200, SERIAL_7N1 );
-  #endif
-  
+
   #ifdef DEBUG
-  Serial.print("Program start!\n");
+  debugSerial.print("Program start!\n");
   #endif
 }
 
@@ -194,15 +189,15 @@ void loop()
   if ( event )
   {
     #ifdef DEBUG
-    Serial.print( "LB:" );
-    Serial.print( left_status );
-    Serial.print( " RB:" );
-    Serial.print( right_status );
-    Serial.print( " X:" );
-    Serial.print( x_status );
-    Serial.print( " Y:" );
-    Serial.print( y_status );
-    Serial.println();
+    debugSerial.print( "LB:" );
+    debugSerial.print( left_status );
+    debugSerial.print( " RB:" );
+    debugSerial.print( right_status );
+    debugSerial.print( " X:" );
+    debugSerial.print( x_status );
+    debugSerial.print( " Y:" );
+    debugSerial.print( y_status );
+    debugSerial.println();
     #endif
 
     /* Encode the packet */
@@ -210,11 +205,7 @@ void loop()
       left_status, right_status, packet );
 
     /* Send packet */
-    #ifdef USE_SERIAL1
     mySerial.write( packet, p_count );
-    #else
-    Serial.write( packet, p_count );
-    #endif
   }
 
  
@@ -224,15 +215,11 @@ void loop()
     if ( !rts_status )
     {
       #ifdef DEBUG
-      Serial.print("Send init byte!\n");
+      debugSerial.print("Send init byte!\n");
       #endif
       
       delay(14);
-      #ifdef USE_SERIAL1
       mySerial.write( 'M' );
-      #else
-      Serial.write( 'M' );
-      #endif
       
       left_status = false;
       right_status = false;
