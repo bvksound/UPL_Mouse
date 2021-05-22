@@ -11,9 +11,7 @@ SoftwareSerial debugSerial(3, 4); // RX, TX
 
 #define PS2_MOUSE_CLOCK   8   /* Must connect to Pin 5 (clock) of PS/2 mouse */
 #define PS2_MOUSE_DATA    7   /* Must connect to Pin 1 (data) of PS/2 mouse */
-
 #define RTS_PROBE         2    
-
 #define USE_MS_PROTOCOL
 
 /* Uncomment to enable debug messages over USB serial (serial monitor must be active).
@@ -71,6 +69,7 @@ void encodePacket(int x, int y, bool lb, bool rb, unsigned char* output)
 
 void setup()
 {
+  
   /* Set pin for RTS probe as input */
   pinMode( RTS_PROBE, INPUT );
   
@@ -81,16 +80,25 @@ void setup()
   {
     /* Wait for USB serial to be ready (monitor active) */
   }
-  debugSerial.print( "Init mouse\n" );
+  debugSerial.print( "DebugPort Start\n" );
+  debugSerial.print( "Start Delay\n" );
   #endif
+
+  delay(2000); // Needed for Stabilisation of power supplies before resetting.
   
   /* Initialize PS/2 mouse */
   mouse.initialize();
-  debugSerial.print( "Initialize mouse\n" );
+  #ifdef DEBUG 
+    debugSerial.print( "Initialize mouse\n" ); 
+  #endif
   mouse.set_sample_rate( 200 );
-  debugSerial.print( "Sample_rate mouse\n" );
+  #ifdef DEBUG 
+    debugSerial.print( "Set Sample rate mouse\n" ); 
+  #endif
   mouse.set_scaling_1_1();
-  debugSerial.print( "Scaling mouse\n" );
+  #ifdef DEBUG
+    debugSerial.print( "Set Scaling mouse\n" ); 
+  #endif
   
   /* Initialize serial for mouse data */
   mySerial.begin(1200);
@@ -114,10 +122,9 @@ void loop()
   int p_count = 3;
   
   /* Read mouse data 4 times as PS/2 is too fast for serial */
-  for(int i=0; i<4; i++)
+  for(int i=0; i<1; i++)
   {
     mouse.report( data );
-    
     x_status += data[1];
     y_status += -data[2];
 
