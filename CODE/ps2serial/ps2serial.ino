@@ -99,6 +99,7 @@ void setup()
   #ifdef DEBUG
     debugSerial.print( "Set Scaling mouse\n" ); 
   #endif
+
   
   /* Initialize serial for mouse data */
   mySerial.begin(1200);
@@ -122,7 +123,7 @@ void loop()
   int p_count = 3;
   
   /* Read mouse data 4 times as PS/2 is too fast for serial */
-  for(int i=0; i<1; i++)
+  for(int i=0; i<4; i++)
   {
     mouse.report( data );
     x_status += data[1];
@@ -201,9 +202,13 @@ void loop()
     debugSerial.print( " RB:" );
     debugSerial.print( right_status );
     debugSerial.print( " X:" );
-    debugSerial.print( x_status );
+    debugSerial.print( x_status);
+    debugSerial.print(", " );
+    debugSerial.print( x_status_d);
     debugSerial.print( " Y:" );
     debugSerial.print( y_status );
+    debugSerial.print(", " );
+    debugSerial.print( y_status_d);
     debugSerial.println();
     #endif
 
