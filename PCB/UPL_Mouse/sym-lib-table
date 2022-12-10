@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "UPL_Mouse-rescue")(type "Legacy")(uri "${KIPRJMOD}/UPL_Mouse-rescue.lib")(options "")(descr ""))
+)
